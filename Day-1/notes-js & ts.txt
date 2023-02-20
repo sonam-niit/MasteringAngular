@@ -1,0 +1,323 @@
+JS- Javascript
+------------------------
+
+Scripting Language
+
+more confortable: ES6
+
+whenever the state changes, to give some effect on the page we required some scripting language.
+
+2 include script in a page.
+	1. Internal script - <script> ----- </script>
+	2. External Script - include that to out webpage
+
+Node JS
+-----------------------------
+Use js as a server side scripting.
+
+we will just execute our code without embedding the same in HTML Page.
+
+for checking version: node -v
+		      npm -v
+
+--------------------------------------------------------------------
+
+Some JS code and execute the same with help of Node.
+
+let num1=30;
+let num2=50;
+
+console.log("Number1: "+num1)
+console.log("Number2: "+num2)
+console.log("Addition: "+ (num1+num2))
+
+_________________________________________________________________
+
+Functions
+----------------------
+function add(a,b){
+    return a+b
+}
+function check(n){
+    return n>18;
+}
+console.log("Addition: "+ add(12,23))
+console.log("Valid User: "+ check(17));
+
+____________________________________________________________________
+
+Array: Sequence of Data 
+
+How to create an Array?
+
+--> nums=[10,20,30,40,50,60]
+
+--> nums=[] (array literals)
+
+--> nums= new Array();
+
+let nums= new Array();
+console.log("Length: "+nums.length);
+
+let data= new Array("alex","bob","catty");
+console.log(data.length)
+
+let fruits= new Array(10); // 10 is the size of array
+
+==============================================================================
+
+Array Methods
+----------------
+push() -- insert element at last index
+
+pop() -- remove element from last index
+
+unshift() -- add element at first index (0 index)
+
+shift() -- remove element from first Index
+
+
+WAP to calculate the Budget based on the Expenses.
+-----------------------------------------------------------
+
+addExpense()
+removeExpense()
+calculateBudget()
+
+================================================================================
+
+Functional Constructor
+------------------------------
+
+function Employee(name, designation,yearOfBirth){
+    this.name=name;
+    this.designation=designation;
+    this.yearOfBirth=yearOfBirth;
+}
+Employee.prototype.calculateAge=function(){
+    console.log("Age: "+ (2023-this.yearOfBirth));
+}
+
+let e1= new Employee("Alex","Senior Manager",1989);
+let e2= new Employee("Bob","Developer",1993);
+
+e1.calculateAge()
+e2.calculateAge();
+
+
+==============================================================================
+
+Callback?
+
+pass a function as an argument to another function.
+
+Call that function when it is required.
+
+function fetchdata(callback){
+    setTimeout(
+        function(){
+            console.log("Data Fetched")
+            callback();
+        },
+    3000)
+    
+}
+function displayData(){
+    console.log("Data Display")
+}
+
+fetchdata(displayData); //passing displayData as para in fetchdata
+============================================================================
+
+to handle the Async functionality of Node JS use Callbacks.
+
+Some times when we have callback hell type of situation, it is considered as a bad practice.
+
+for the solution of this: Promises.
+
+Map: data structure where we can store the values in the combination of key value Pair
+---------------------------------------------------------------------------------------
+
+var map = new Map();
+map.set(1,"sonam");
+map.set(2,"alex");
+map.set(3, "clair");
+console.log(map);
+console.log("Size: "+map.size)
+console.log("Map has the key 3? "+map.has(3))
+//get the value on the basis of key
+console.log("Get value of key 2: "+map.get(2))
+//delet on the basis of key
+console.log(map.delete(1)+" deleted")
+map.clear();
+console.log("Aftre Clear: "+map.size)
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Map methods
+
+var map = new Map();
+map.set(1,"sonam");
+map.set(2,"alex");
+map.set(3, "clair");
+console.log("Iterate using Entries")
+let entries= map.entries();
+for(let x of entries){
+    console.log(x[0]+" "+x[1])
+}
+console.log("Iterate using keys")
+let keys= map.keys();
+for(let key of keys){
+    console.log(key+": "+map.get(key))
+}
+console.log("Iterate using values")
+let values=map.values();
+for(let v of values){
+    console.log(v)
+}
+map.forEach(function(value,key){
+    console.log(key+": "+value)
+})
+
+Task: JAVAScript
+-----------------------
+WAP to calculate the Budget based on the Expenses. (Improvements)
+------------------------------------------------------------------
+
+Create Class Expense - id, details, amount
+
+addExpense(Expense e)
+updateExpense(Expense e)
+removeExpense(Expense e)
+calculateBudget()
+
+Implement Using Map
+
+Workig with Typescript
+--------------------------------------
+Modules
+----------------
+we can declare variables, functions, classes etc inside a module.
+
+Its a declarative.
+
+To use the module in another module, import and use all the variables, functions , classes.
+
+Namespace: Organize the code use namespace
+-------------------------------------------------
+
+validation.ts
+
+namespace validation{
+    export interface StringValidator{
+        isAcceptable(s:string):boolean;
+    }
+}
+
+ZipCodeValidator.ts
+
+///<reference path="validation.ts"/>
+namespace validation{
+
+    const numberRegex=/^[0-9]+$/;
+    export class ZipCodeValidator implements StringValidator {
+        isAcceptable(s: string): boolean {
+            return s.length===3 && numberRegex.test(s);
+        }
+
+    }
+}
+
+LettersValidator.ts
+
+///<reference path="validation.ts"/>
+namespace validation{
+
+    const letterRegex=/^[A-Za-z]+$/;
+    export class LettersValidator implements StringValidator {
+        isAcceptable(s: string): boolean {
+            return letterRegex.test(s);
+        }
+
+    }
+}
+
+TestValidation.ts
+
+///<reference path="validation.ts"/>
+///<reference path="LettersValidator.ts"/>
+///<reference path="ZipCodeValidator.ts"/>
+
+var strings=["HelloWorld","123456","1234"];
+
+var testValidation= new validation.LettersValidator();
+for(let s of strings){
+    console.log(s+" "+testValidation.isAcceptable(s));
+}
+
+// var validators:{[s:string]:validation.StringValidator}={};
+// validators["Zip Code"] = new validation.ZipCodeValidator();
+// validators["Letters"] = new validation.LettersValidator();
+
+// for(let s of strings){
+//     for(let name in validators){
+//         console.log(s+" "+validators[name].isAcceptable(s))
+//     }
+// }
+
+
+To Compile: tsc tsc --outFile sample.js testValidation.ts
+
+it will create a single compiled file for all the files which you can execute using node command.
+
+>node sample.js
+
+
+
+
+Cart Management Application using Typescript
+------------------------------------------------
+
+Product- class (id, name,price)
+Cart - class (id, p[],userid, total)
+User - class (id, name, email)
+
+User can add product to cart
+User can remove product from cart
+User can check the Cart Details
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
