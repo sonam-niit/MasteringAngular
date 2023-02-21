@@ -1,0 +1,9 @@
+<h1>Property Binding</h1>
+<hr>
+<button (click)="onClick()" 
+class="btn btn-primary">
+    {{text}}</button>
+<br>
+<img *ngIf="flag" [src]="imgUrl" [alt]="altText" 
+[width]="w" [height]="h">
+

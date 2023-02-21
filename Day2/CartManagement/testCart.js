@@ -1,0 +1,16 @@
+"use strict";
+exports.__esModule = true;
+var product_1 = require("./product");
+var user_1 = require("./user");
+var cart_1 = require("./cart");
+var sonamcart = new cart_1.Cart(1, [], new user_1.User(1, "sonam", "sonam@gmail.com"));
+sonamcart.addProduct(new product_1.Product(1, "PencilBox", 45));
+sonamcart.addProduct(new product_1.Product(2, "Milk", 45));
+var megancart = new cart_1.Cart(2, [], new user_1.User(2, "Megan", "megan@gmail.com"));
+megancart.addProduct(new product_1.Product(1, "PencilBox", 45));
+megancart.addProduct(new product_1.Product(2, "Milk", 45));
+sonamcart.checkDetails();
+megancart.checkDetails();
+sonamcart.removeProduct(2);
+console.log("Sona's Cart Details");
+sonamcart.checkDetails();

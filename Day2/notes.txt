@@ -1,0 +1,184 @@
+Angular application is SPA
+
+we can divide our application in set of components.
+
+1 component is having its class file and template (HTML file)
+
+Dependencies we can inject in class file(.ts)
+Directives we will use in template (.html)
+
+.ts(class file) to .html(template) --- [Property Binding]
+
+.html to .ts -- (Event Binding)
+
+Angular Application is providing default Module
+----------------------------------------------------
+
+App Module
+
+app.module.ts (module configuration file)
+
+--> add imports, exports, providers etc...
+
+App Module - uses app Routing for routing 
+
+-->app-routing.module.ts (configure the routes of Navigation)
+
+App -- Default Component of Angular Application
+(Root Component)
+
+app.component.ts --  Class File (add variable/methods/constructor )
+app.component.html -- Template file (Include html code for display)
+app.component.css -- Styling file (CSS code)
+app.component.spec.ts -- Test file (Test Cases you can add here)
+
+
+Boostraping your APP
+-------------------------------
+1. just copy the bootstrap link in index.html
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>FirstApp</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+  <app-root></app-root>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+2. install bootstrap using npm and then import the css in styles.css file
+
+	npm install bootstrap
+
+	edit styles.css
+
+	@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+
+3. Add edit angular.json
+
+	 "styles": [
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+
+
+===============================================================================
+
+Create an Angular Application for Your Portfolio.
+
+header - your details
+sidebar - photograph, summary
+skill
+educational
+projectdetails
+
+================================================================================
+Data Binding
+
+one Way
+--------------
+
+.ts --> .html (component -- template)
+
+property binding -- [] -- where we are passing the attribute of tag in square bracket and assiging a var as its value.
+
+interpolation: {{ }} --> we can directly print the value using this, need to include var name in {{ text }}
+
+
+.html --> .ts (template -- component)
+
+event binding (click, keyup, keytype)
+
+by clicking on button you can call the function written in .ts file.
+
+two way
+----------------
+html <--> component(ts)
+
+import FormsModule in app.module.ts (in imports array)
+
+use [(ngModel)]
+
+here () indicates event binding, [] indicates propert binding
+
+=============================================================================
+
+Component Level Interaction
+
+parent - child 
+
+(same level components)
+
+we can do the component level interaction using input, output and Event.
+
+
+Any level component you can to communicate for that we will use Services (this we will do later)
+-------------------------------------------------------------------------------------------------
+
+parent comp- child comp (input)
+
+child comp- parent comp (output +event emitter)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
