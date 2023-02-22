@@ -1,0 +1,17 @@
+<h1>Users List</h1>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th><th>Name</th><th>Email</th><th>Country</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of users" (click)="onSelected(u.id)">
+            <td>{{u.id}}</td>
+            <td>{{u.name}}</td>
+            <td>{{u.email}}</td>
+            <td>{{u.country}}</td>
+        </tr>
+    </tbody>
+</table>

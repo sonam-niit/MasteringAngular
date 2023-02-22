@@ -1,0 +1,60 @@
+<div class="conatiner">
+    <h2>Template Driven Form</h2>
+    <div class="row">
+        <form class="col-md-6 offset-3" (ngSubmit)="onSubmit()"
+        name="form" #form=ngForm novalidate>
+            <div class="form-group">
+                <label>FirstName</label>
+                <input type="text" name="fname" id="fname" placeholder="FirstName"
+                [(ngModel)]="fname" required class="form-control" #firstname="ngModel">
+
+                <div *ngIf="!firstname?.valid && (firstname?.dirty || firstname?.touched)"
+                class="error">
+                    Invalid FirstName
+                </div>
+            </div>
+            <div class="form-group">
+                <label>LastName</label>
+                <input type="text" name="lname" placeholder="LastName"
+                [(ngModel)]="lname" required class="form-control" #lastname="ngModel">
+                <div *ngIf="!lastname?.valid && (lastname?.dirty || lastname?.touched)"
+                class="error">
+                    Invalid LastName
+                </div>
+            </div>
+            <div class="form-group">
+                <label>LastName</label>
+                <input type="email" name="email" placeholder="EmailId"
+                [(ngModel)]="email" required email class="form-control" #emailId="ngModel">
+
+                <div *ngIf="!emailId?.valid && (emailId?.dirty || emailId?.touched)"
+                class="error">
+                    <div *ngIf="emailId.errors?.['required']">
+                        EmailId cannot be Empty
+                    </div>
+                    <div *ngIf="emailId.errors?.['email']">
+                        EmailId is not valid
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" id="password" placeholder="Password"
+                [(ngModel)]="password" required minlength="8" class="form-control" #pwd="ngModel" >
+                <div *ngIf="!pwd?.valid && (pwd?.dirty || pwd?.touched)"
+                class="error">
+                <div *ngIf="pwd.errors?.['required']">
+                    Password cannot be Empty
+                </div>
+                <div *ngIf="pwd.errors?.['minlength']">
+                    Password Must be 8 characters long
+                </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary"
+                [disabled]="!form.valid">Register</button>
+            </div>
+        </form>
+    </div>
+</div>

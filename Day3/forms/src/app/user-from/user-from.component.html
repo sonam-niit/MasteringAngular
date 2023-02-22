@@ -1,0 +1,48 @@
+<div class="conatiner">
+    <h2>Template Driven Form</h2>
+    <div class="row">
+        <form class="col-md-6 offset-3" (ngSubmit)="onSubmit()"
+        name="form" #form=ngForm novalidate>
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" name="fname" id="fname" placeholder="Name"
+                [(ngModel)]="user.name" required class="form-control" #firstname="ngModel">
+
+                <div *ngIf="!firstname?.valid && (firstname?.dirty || firstname?.touched)"
+                class="error">
+                    Invalid FirstName
+                </div>
+            </div>
+            <div class="form-group">
+                <label>LastName</label>
+                <input type="email" name="email" placeholder="EmailId"
+                [(ngModel)]="user.email" required email class="form-control" #emailId="ngModel">
+
+                <div *ngIf="!emailId?.valid && (emailId?.dirty || emailId?.touched)"
+                class="error">
+                    <div *ngIf="emailId.errors?.['required']">
+                        EmailId cannot be Empty
+                    </div>
+                    <div *ngIf="emailId.errors?.['email']">
+                        EmailId is not valid
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Country</label>
+                <input type="text" name="country" placeholder="Country"
+                [(ngModel)]="user.country" required class="form-control" #country="ngModel">
+                <div *ngIf="!country?.valid && (country?.dirty || country?.touched)"
+                class="error">
+                    Invalid Country
+                </div>
+            </div>
+            
+            
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary"
+                [disabled]="!form.valid">Register</button>
+            </div>
+        </form>
+    </div>
+</div>
