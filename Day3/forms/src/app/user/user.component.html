@@ -7,7 +7,8 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let u of users" (click)="onSelected(u.id)">
+        <tr *ngFor="let u of users;let isEven=even" (click)="onSelected(u)"
+        [ngClass]="isEven?'red':'blue'">
             <td>{{u.id}}</td>
             <td>{{u.name}}</td>
             <td>{{u.email}}</td>
@@ -15,3 +16,4 @@
         </tr>
     </tbody>
 </table>
+<app-user-details [selectedUser]="selectedUser"></app-user-details>

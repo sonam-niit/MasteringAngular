@@ -10,6 +10,18 @@ import { UserComponent } from './user/user.component';
 import { UserFromComponent } from './user-from/user-from.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { CustomPipeComponent } from './custom-pipe/custom-pipe.component';
+import { FormatPipe } from './customepipesbyme/format';
+import { MytitlePipe } from './customepipesbyme/mytitle.pipe';
+import { TrackbyComponent } from './trackby/trackby.component';
+import { NgifComponent } from './ngif/ngif.component';
+import { NgswitchComponent } from './ngswitch/ngswitch.component';
+import { NgstyleComponent } from './ngstyle/ngstyle.component';
+import { NgclassComponent } from './ngclass/ngclass.component';
+import { HighlightDirective } from './highlight.directive';
+import { HoverDirective } from './hover.directive';
+import { IfDirective } from './if.directive';
+import { IfdirectiveuseComponent } from './ifdirectiveuse/ifdirectiveuse.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +31,19 @@ import { PipesComponent } from './pipes/pipes.component';
     UserComponent,
     UserFromComponent,
     UserDetailsComponent,
-    PipesComponent
+    PipesComponent,
+    CustomPipeComponent,
+    FormatPipe,
+    MytitlePipe,
+    TrackbyComponent,
+    NgifComponent,
+    NgswitchComponent,
+    NgstyleComponent,
+    NgclassComponent,
+    HighlightDirective,
+    HoverDirective,
+    IfDirective,
+    IfdirectiveuseComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,31 @@
+<h1>Simple If</h1>
+<p *ngIf="flag">This is My paragraph</p>
+<h2>Div with Conditions</h2>
+<div>
+    <input type="radio" name="rb" (click)="changeData(true)" checked>valid
+    <input type="radio" name="rb" (click)="changeData(false)" >InValid
+</div>
+<div *ngIf="isValid">this is valid selection</div>
+<div *ngIf="!isValid">this is Invalid selection</div>
+<h2>NgIf with Else Block</h2>
+<div>
+    <input type="radio" name="rb" (click)="changeData(true)" checked>valid
+    <input type="radio" name="rb" (click)="changeData(false)" >InValid
+</div>
+<div *ngIf="isValid else elseblock">this is valid selection</div>
+<ng-template #elseblock>
+    <div>This data is Invalid</div>
+</ng-template>
+
+<h2>NgIf with then Else block</h2>
+<div>
+    <input type="radio" name="rb" (click)="changeData(true)" checked>valid
+    <input type="radio" name="rb" (click)="changeData(false)" >InValid
+</div>
+<div *ngIf="isValid then thenblock else elseblock"></div>
+<ng-template #thenblock>
+    <div>This is valid block</div>
+</ng-template>
+<ng-template #elseblock>
+    <div>This data is Invalid</div>
+</ng-template>

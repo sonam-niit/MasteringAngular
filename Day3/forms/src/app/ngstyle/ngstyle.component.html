@@ -1,0 +1,28 @@
+<h1 appHighlight>Ng Style Directive</h1>
+<button [ngStyle]="{'color':'red','font-weight':500,'font-size.px':20}">
+    Click Me
+</button>
+<h1>Ng Style Apply when click on Button</h1>
+<button [ngStyle]="addButtonCSS()">
+    Click Me
+</button>
+<h1 [appHover]="'orange'">Dynamic Styling</h1>
+<h2 appHighlight>Employee List</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th><th>Name</th><th>DOB</th><th>Gender</th><th>rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of employees" 
+        [ngClass]="e.rating>4.5? 'one':'five'">
+            <td>{{e.id}}</td>
+            <td>{{e.Name}}</td>
+            <td>{{e.DOB}}</td>
+            <td>{{e.Gender}}</td>
+            <td>{{e.rating}}</td>
+        </tr>
+    </tbody>
+</table>

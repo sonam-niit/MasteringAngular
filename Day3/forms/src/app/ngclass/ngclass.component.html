@@ -1,0 +1,14 @@
+<h1>ngClass as a String</h1>
+<p [ngClass]=" 'one' ">Welcome to the World od NgClass Styling</p>
+<p [ngClass]=" 'two' ">Welcome to the World od NgClass Styling</p>
+<p [ngClass]=" 'three' ">Welcome to the World od NgClass Styling</p>
+<p [ngClass]=" 'four' ">Welcome to the World od NgClass Styling</p>
+<p [ngClass]=" 'five' ">Welcome to the World od NgClass Styling</p>
+<h3>ngClass as a String with multiple classes</h3>
+<p [ngClass]=" 'one three four' ">Welcome to the World od NgClass Styling</p>
+<h3>Apply as an array</h3>
+<p [ngClass]="['one','two','three','four']">Welcome All</p>
+<h3>ngClas as Object</h3>
+<p [ngClass]="{'one':true,'two':false,'three':true,'four':true}">Welcome All</p>
+<h3>ngClass using Method</h3>
+<p [ngClass]="addCssClasses('type3')">Class with method</p>

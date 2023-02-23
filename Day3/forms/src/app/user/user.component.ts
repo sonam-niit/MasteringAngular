@@ -1,5 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
-import { UserDetailsComponent } from '../user-details/user-details.component';
+import { Component } from '@angular/core';
 import { UserService } from '../user.service';
 
 @Component({
@@ -8,6 +7,7 @@ import { UserService } from '../user.service';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent {
+  selectedUser:any={id:"",name:"",email:"",country:""}
   users:any=[];
   constructor(private uservice:UserService){}
   ngOnInit(){
@@ -15,7 +15,7 @@ export class UserComponent {
   }
   
   onSelected(user:any){
-    this.uservice.saveSelected(user);
-
+    this.selectedUser=user;
+    //this.uservice.saveSelected(user);
   }
 }

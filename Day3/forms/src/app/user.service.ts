@@ -16,13 +16,13 @@ export class UserService {
   getAllUsers(){
     return this.users;
   }
-  saveSelected(id:any){
-    this.selectedUser=id
-  }
-  getSelected(){
-    if(this.selectedUser)
-      return this.users[this.selectedUser-1]
-    return {id:0,name:"empty",email:"test",country:"test"}
-  }
+  // saveSelected(u:any){
+  //   this.selectedUser=u
+  // }
+  // getSelected(){
+  //   if(this.selectedUser)
+  //     return this.selectedUser;
+  //   return {id:0,name:"empty",email:"test",country:"test"}
+  // }
   
 }

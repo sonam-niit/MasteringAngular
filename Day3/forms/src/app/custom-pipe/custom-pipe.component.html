@@ -1,0 +1,28 @@
+<h1>Custom Pipe Demo</h1>
+<hr>
+<p>{{ name | changespace : '-' }}</p>
+<h2>Employee List</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Index Number</th><th>ID</th><th>Name</th><th>DOB</th><th>Gender</th>
+            <th>Is First?</th><th>Is Last?</th>
+            <th>Is Even?</th><th>Is Odd?</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of employees; let i=index; let isFirst=first; let isLast=last; let isEven=even;
+        let isOdd=odd" [ngClass]="isFirst?'first':'red'">
+            <td>{{i}}</td>
+            <td>{{e.id}}</td>
+            <td>{{e.Name | mytitle:e.Gender}}</td>
+            <td>{{e.DOB}}</td>
+            <td>{{e.Gender}}</td>
+            <td>{{isFirst}}</td>
+            <td>{{isLast}}</td>
+            <td>{{isEven}}</td>
+            <td>{{isOdd}}</td>
+        </tr>
+    </tbody>
+</table>

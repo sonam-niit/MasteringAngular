@@ -1,0 +1,21 @@
+<h2>Employee List</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Index Number</th><th>ID</th><th>Name</th><th>DOB</th><th>Gender</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of employees; 
+        let i=index; trackBy:trackByEmployeeId">
+            <td>{{i}}</td>
+            <td>{{e.id}}</td>
+            <td>{{e.Name | mytitle:e.Gender}}</td>
+            <td>{{e.DOB}}</td>
+            <td>{{e.Gender}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<button class="btn btn-primary" (click)="getEmployees()">Refresh My Data</button>
