@@ -1,0 +1,16 @@
+<table>
+    <thead>
+        <tr>
+            <th>ID</th><th>Name</th><th>UserName</th><th>Company</th><th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of users">
+            <td>{{u.id}}</td>
+            <td>{{u.name}}</td>
+            <td>{{u.username}}</td>
+            <td>{{u.company.name}},  {{u.company.catchPhrase}}, {{u.company.bs}}</td>
+            <td>{{u.address.city}}, {{u.address.zipcode}} {{u.address.geo.lng}}</td>
+        </tr>
+    </tbody>
+</table>

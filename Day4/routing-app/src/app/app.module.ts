@@ -10,6 +10,8 @@ import { AboutchildAComponent } from './aboutchild-a/aboutchild-a.component';
 import { AboutchildBComponent } from './aboutchild-b/aboutchild-b.component';
 import { DetailsComponent } from './details/details.component';
 import { ProfileComponent } from './profile/profile.component';
+import { UserslistComponent } from './userslist/userslist.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { ProfileComponent } from './profile/profile.component';
     AboutchildAComponent,
     AboutchildBComponent,
     DetailsComponent,
-    ProfileComponent
+    ProfileComponent,
+    UserslistComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
