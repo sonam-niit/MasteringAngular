@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Sonam Soni",
+      "email": "sonam@microsoft.com"
+    },
+    {
+      "id": 2,
+      "name": "Alex",
+      "email": "alex@outlook.com"
+    },
+    {
+      "id": 3,
+      "name": "bob",
+      "email": "bob@outlook.com",
+      "designation": "Senior Developer"
+    }
+  ]
+}

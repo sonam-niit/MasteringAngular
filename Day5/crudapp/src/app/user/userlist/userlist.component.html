@@ -1,0 +1,21 @@
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Id</th><th>Name</th><th>Email</th><th>Operation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of users">
+            <td>{{u.id}}</td>
+            <td>{{u.name}}</td>
+            <td>{{u.email}}</td>
+            <td>
+                <button class="btn btn-danger" 
+                (click)="onDelete(u.id)">delete</button>
+                <a routerLink="/edituser/{{u.id}}">
+                    <button class="btn btn-primary">edit</button>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
