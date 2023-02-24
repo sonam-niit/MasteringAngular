@@ -12,6 +12,7 @@ import { DetailsComponent } from './details/details.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserslistComponent } from './userslist/userslist.component';
 import {HttpClientModule} from '@angular/common/http';
+import { UserdetailsComponent } from './userdetails/userdetails.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {HttpClientModule} from '@angular/common/http';
     AboutchildBComponent,
     DetailsComponent,
     ProfileComponent,
-    UserslistComponent
+    UserslistComponent,
+    UserdetailsComponent
   ],
   imports: [
     BrowserModule,

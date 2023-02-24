@@ -8,7 +8,7 @@ import { User } from './model/user.model';
 })
 export class UserService {
 
-  baseUrl:string="https://jsonplaceholder.typicode.com/users";
+  baseUrl:string="https://jsonplaceholder.typicode.com/users/";
 
   constructor(private http: HttpClient) { }
 

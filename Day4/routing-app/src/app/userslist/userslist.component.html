@@ -1,7 +1,7 @@
-<table>
+<table class="table table-bordered table-striped">
     <thead>
         <tr>
-            <th>ID</th><th>Name</th><th>UserName</th><th>Company</th><th>Address</th>
+            <th>ID</th><th>Name</th><th>UserName</th><th>Opeartions</th>
         </tr>
     </thead>
     <tbody>
@@ -9,8 +9,11 @@
             <td>{{u.id}}</td>
             <td>{{u.name}}</td>
             <td>{{u.username}}</td>
-            <td>{{u.company.name}},  {{u.company.catchPhrase}}, {{u.company.bs}}</td>
-            <td>{{u.address.city}}, {{u.address.zipcode}} {{u.address.geo.lng}}</td>
+            <td><a routerLink="/userdetails/{{u.id}}">
+                <button class="btn btn-success">View</button>
+            </a></td>
+            <!-- <td>{{u.company.name}},  {{u.company.catchPhrase}}, {{u.company.bs}}</td>
+            <td>{{u.address.city}}, {{u.address.zipcode}} {{u.address.geo.lng}}</td> -->
         </tr>
     </tbody>
 </table>

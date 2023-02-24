@@ -7,12 +7,14 @@ import { DetailsComponent } from './details/details.component';
 import { HomeComponent } from './home/home.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ProfileComponent } from './profile/profile.component';
+import { UserdetailsComponent } from './userdetails/userdetails.component';
 import { UserslistComponent } from './userslist/userslist.component';
 
 const routes: Routes = [
   {path:"",redirectTo:'home',pathMatch:"full"},
   {path:"home",component:HomeComponent},
   {path:"userlist",component:UserslistComponent},
+  {path:"userdetails/:id",component:UserdetailsComponent},
   {path:"about",component:AboutComponent,children:[
     {path:"",redirectTo:"childa",pathMatch:"full"},
     {path:'childa',component:AboutchildAComponent},
